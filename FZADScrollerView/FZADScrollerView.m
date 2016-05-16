@@ -79,20 +79,22 @@
 
 - (void)setImages:(NSArray *)images
 {
-    if (_images != images) {
-        _images = images;
-        if (images.count == 1) {
-            self.centerImageView.image = [_images lastObject];
-            self.scrollerView.scrollEnabled = NO;
-        } else if (images.count >= 2) {
-            self.leftImageView.image = [_images lastObject];
-            self.centerImageView.image = [_images objectAtIndex:0];
-            self.rightImageView.image = [_images objectAtIndex:1];
-            // image >= 2时 开启轮播
-            self.moveTimer = [NSTimer scheduledTimerWithTimeInterval:kMoveTimeInterval target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
-        }
-        self.pageControl.numberOfPages = _images.count;
+    if (images.count == 0) {
+        return;
     }
+    
+    _images = images;
+    if (images.count == 1) {
+        self.centerImageView.image = [_images lastObject];
+        self.scrollerView.scrollEnabled = NO;
+    } else if (images.count >= 2) {
+        self.leftImageView.image = [_images lastObject];
+        self.centerImageView.image = [_images objectAtIndex:0];
+        self.rightImageView.image = [_images objectAtIndex:1];
+        // image >= 2时 开启轮播
+        self.moveTimer = [NSTimer scheduledTimerWithTimeInterval:kMoveTimeInterval target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+    }
+    self.pageControl.numberOfPages = _images.count;
 }
 
 - (void)timerAction
