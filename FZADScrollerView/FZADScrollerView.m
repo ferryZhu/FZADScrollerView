@@ -10,13 +10,13 @@
 
 #define kFZADScrollerViewHeight     self.bounds.size.height
 #define kFZADScrollerViewWidth      self.bounds.size.width
-#define kMoveTimeInterval           3
+#define kMoveTimeInterval           2
 
 @interface FZADScrollerView ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollerView;
 
-@property (nonatomic, assign) NSInteger currentImage;
+@property (nonatomic, assign) NSInteger currentImageIndex;
 
 @property (nonatomic, strong) UIImageView *leftImageView;
 
@@ -26,8 +26,6 @@
 
 @property (nonatomic, strong) NSTimer *moveTimer;
 
-@property (nonatomic, assign) BOOL isAutoMove;
-
 @end
 
 @implementation FZADScrollerView
@@ -36,13 +34,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.scrollerView = [[UIScrollView alloc] initWithFrame:self.bounds];
-        self.scrollerView.showsHorizontalScrollIndicator = NO;
-        self.scrollerView.showsVerticalScrollIndicator = NO;
-        self.scrollerView.pagingEnabled = YES;
-        self.scrollerView.delegate = self;
-        [self.scrollerView setContentSize:CGSizeMake(3 * kFZADScrollerViewWidth, kFZADScrollerViewHeight)];
-        [self.scrollerView setContentOffset:CGPointMake(kFZADScrollerViewWidth, 0.0)];
+        
         [self addSubview:self.scrollerView];
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerViewTapGestureAction)];
@@ -61,7 +53,7 @@
         self.pageControl.backgroundColor = [UIColor darkGrayColor];
         [self addSubview:self.pageControl];
         
-        self.currentImage = 0;
+        self.currentImageIndex = 0;
     }
     
     return self;
@@ -75,6 +67,21 @@
     }
     
     return self;
+}
+
+- (UIScrollView *)scrollerView
+{
+    if (!_scrollerView) {
+        _scrollerView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        _scrollerView.showsHorizontalScrollIndicator = NO;
+        _scrollerView.showsVerticalScrollIndicator = NO;
+        _scrollerView.pagingEnabled = YES;
+        _scrollerView.delegate = self;
+        [_scrollerView setContentSize:CGSizeMake(3 * kFZADScrollerViewWidth, kFZADScrollerViewHeight)];
+        [_scrollerView setContentOffset:CGPointMake(kFZADScrollerViewWidth, 0.0)];
+    }
+    
+    return _scrollerView;
 }
 
 - (void)setImages:(NSArray *)images
@@ -93,6 +100,7 @@
         self.rightImageView.image = [_images objectAtIndex:1];
         // image >= 2时 开启轮播
         self.moveTimer = [NSTimer scheduledTimerWithTimeInterval:kMoveTimeInterval target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.moveTimer forMode:NSDefaultRunLoopMode];
     }
     self.pageControl.numberOfPages = _images.count;
 }
@@ -100,7 +108,6 @@
 - (void)timerAction
 {
     [self.scrollerView setContentOffset:CGPointMake(2 * kFZADScrollerViewWidth, 0.0) animated:YES];
-    self.isAutoMove = YES;
     [self performSelector:@selector(scrollViewDidEndDecelerating:) withObject:self.scrollerView afterDelay:0.4f];
 }
 
@@ -108,39 +115,30 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.x == 0.0) {
-        self.currentImage = (self.currentImage - 1) % self.images.count;
+        self.currentImageIndex = (self.currentImageIndex - 1) % self.images.count;
     } else if (scrollView.contentOffset.x == 2 * kFZADScrollerViewWidth) {
-        self.currentImage = (self.currentImage + 1) % self.images.count;
+        self.currentImageIndex = (self.currentImageIndex + 1) % self.images.count;
     } else {
         return;
     }
     
-    self.pageControl.currentPage = self.currentImage;
-    self.leftImageView.image = [self.images objectAtIndex:(self.currentImage - 1) % self.images.count];
-    self.centerImageView.image = [self.images objectAtIndex:self.currentImage % self.images.count];
-    self.rightImageView.image = [self.images objectAtIndex:(self.currentImage + 1) % self.images.count];
+    self.pageControl.currentPage = self.currentImageIndex;
+    self.leftImageView.image = [self.images objectAtIndex:(self.currentImageIndex - 1) % self.images.count];
+    self.centerImageView.image = [self.images objectAtIndex:self.currentImageIndex % self.images.count];
+    self.rightImageView.image = [self.images objectAtIndex:(self.currentImageIndex + 1) % self.images.count];
     
     [self.scrollerView setContentOffset:CGPointMake(kFZADScrollerViewWidth, 0)];
     
-    if (!self.isAutoMove) {
-        // 手动滑动，计时器重新计算时间
+    // 手动滑动时 RunLoop的模式由 NSDefaultRunLoopMode 更改为 UITrackingRunLoopMode
+    if ([[NSRunLoop currentRunLoop] currentMode] == UITrackingRunLoopMode) {
         [self.moveTimer setFireDate:[NSDate dateWithTimeIntervalSinceNow:kMoveTimeInterval]];
     }
-    self.isAutoMove = NO;
 }
 
 #pragma mark - GestureAction
 - (void)scrollerViewTapGestureAction
 {
-    [self.delegate didSelectImageAtIndexPath:self.currentImage];
+    [self.delegate didSelectImageAtIndexPath:self.currentImageIndex];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
