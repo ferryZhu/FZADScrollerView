@@ -4,6 +4,5 @@
     FZADScrollerView *adScrollerView = [[FZADScrollerView alloc] initWithFrame:CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, 150) images:images];
     adScrollerView.delegate = self;
     [self.view addSubview:adScrollerView];
-    
     FZADScrollerViewDelegate
         - (void)didSelectImageAtIndexPath:(NSInteger)indexPath; 
