@@ -13,31 +13,12 @@
 		252846431C8542B9002B5023 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252846411C8542B9002B5023 /* Main.storyboard */; };
 		252846451C8542B9002B5023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 252846441C8542B9002B5023 /* Assets.xcassets */; };
 		252846481C8542B9002B5023 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252846461C8542B9002B5023 /* LaunchScreen.storyboard */; };
-		252846531C8542B9002B5023 /* FZADScrollerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 252846521C8542B9002B5023 /* FZADScrollerViewTests.m */; };
-		2528465E1C8542B9002B5023 /* FZADScrollerViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528465D1C8542B9002B5023 /* FZADScrollerViewUITests.m */; };
 		2528466D1C8542DE002B5023 /* FZADScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528466C1C8542DE002B5023 /* FZADScrollerView.m */; };
 		252846721C85487C002B5023 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2528466E1C85487C002B5023 /* 1.png */; };
 		252846731C85487C002B5023 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2528466F1C85487C002B5023 /* 4.png */; };
 		252846741C85487C002B5023 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 252846701C85487C002B5023 /* 3.png */; };
 		252846751C85487C002B5023 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 252846711C85487C002B5023 /* 2.png */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2528464F1C8542B9002B5023 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2528462D1C8542B9002B5023 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 252846341C8542B9002B5023;
-			remoteInfo = FZADScrollerView;
-		};
-		2528465A1C8542B9002B5023 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2528462D1C8542B9002B5023 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 252846341C8542B9002B5023;
-			remoteInfo = FZADScrollerView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		252846351C8542B9002B5023 /* FZADScrollerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FZADScrollerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,12 +31,6 @@
 		252846441C8542B9002B5023 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		252846471C8542B9002B5023 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		252846491C8542B9002B5023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2528464E1C8542B9002B5023 /* FZADScrollerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FZADScrollerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		252846521C8542B9002B5023 /* FZADScrollerViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZADScrollerViewTests.m; sourceTree = "<group>"; };
-		252846541C8542B9002B5023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		252846591C8542B9002B5023 /* FZADScrollerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FZADScrollerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2528465D1C8542B9002B5023 /* FZADScrollerViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZADScrollerViewUITests.m; sourceTree = "<group>"; };
-		2528465F1C8542B9002B5023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2528466B1C8542DE002B5023 /* FZADScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZADScrollerView.h; sourceTree = "<group>"; };
 		2528466C1C8542DE002B5023 /* FZADScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZADScrollerView.m; sourceTree = "<group>"; };
 		2528466E1C85487C002B5023 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -72,20 +47,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2528464B1C8542B9002B5023 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		252846561C8542B9002B5023 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,8 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				252846371C8542B9002B5023 /* FZADScrollerView */,
-				252846511C8542B9002B5023 /* FZADScrollerViewTests */,
-				2528465C1C8542B9002B5023 /* FZADScrollerViewUITests */,
 				252846361C8542B9002B5023 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,8 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				252846351C8542B9002B5023 /* FZADScrollerView.app */,
-				2528464E1C8542B9002B5023 /* FZADScrollerViewTests.xctest */,
-				252846591C8542B9002B5023 /* FZADScrollerViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,24 +96,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		252846511C8542B9002B5023 /* FZADScrollerViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				252846521C8542B9002B5023 /* FZADScrollerViewTests.m */,
-				252846541C8542B9002B5023 /* Info.plist */,
-			);
-			path = FZADScrollerViewTests;
-			sourceTree = "<group>";
-		};
-		2528465C1C8542B9002B5023 /* FZADScrollerViewUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2528465D1C8542B9002B5023 /* FZADScrollerViewUITests.m */,
-				2528465F1C8542B9002B5023 /* Info.plist */,
-			);
-			path = FZADScrollerViewUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,42 +116,6 @@
 			productReference = 252846351C8542B9002B5023 /* FZADScrollerView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2528464D1C8542B9002B5023 /* FZADScrollerViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 252846651C8542B9002B5023 /* Build configuration list for PBXNativeTarget "FZADScrollerViewTests" */;
-			buildPhases = (
-				2528464A1C8542B9002B5023 /* Sources */,
-				2528464B1C8542B9002B5023 /* Frameworks */,
-				2528464C1C8542B9002B5023 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				252846501C8542B9002B5023 /* PBXTargetDependency */,
-			);
-			name = FZADScrollerViewTests;
-			productName = FZADScrollerViewTests;
-			productReference = 2528464E1C8542B9002B5023 /* FZADScrollerViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		252846581C8542B9002B5023 /* FZADScrollerViewUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 252846681C8542B9002B5023 /* Build configuration list for PBXNativeTarget "FZADScrollerViewUITests" */;
-			buildPhases = (
-				252846551C8542B9002B5023 /* Sources */,
-				252846561C8542B9002B5023 /* Frameworks */,
-				252846571C8542B9002B5023 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2528465B1C8542B9002B5023 /* PBXTargetDependency */,
-			);
-			name = FZADScrollerViewUITests;
-			productName = FZADScrollerViewUITests;
-			productReference = 252846591C8542B9002B5023 /* FZADScrollerViewUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,14 +127,6 @@
 				TargetAttributes = {
 					252846341C8542B9002B5023 = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					2528464D1C8542B9002B5023 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 252846341C8542B9002B5023;
-					};
-					252846581C8542B9002B5023 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 252846341C8542B9002B5023;
 					};
 				};
 			};
@@ -249,8 +144,6 @@
 			projectRoot = "";
 			targets = (
 				252846341C8542B9002B5023 /* FZADScrollerView */,
-				2528464D1C8542B9002B5023 /* FZADScrollerViewTests */,
-				252846581C8542B9002B5023 /* FZADScrollerViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,20 +163,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2528464C1C8542B9002B5023 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		252846571C8542B9002B5023 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -298,36 +177,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2528464A1C8542B9002B5023 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252846531C8542B9002B5023 /* FZADScrollerViewTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		252846551C8542B9002B5023 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2528465E1C8542B9002B5023 /* FZADScrollerViewUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		252846501C8542B9002B5023 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 252846341C8542B9002B5023 /* FZADScrollerView */;
-			targetProxy = 2528464F1C8542B9002B5023 /* PBXContainerItemProxy */;
-		};
-		2528465B1C8542B9002B5023 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 252846341C8542B9002B5023 /* FZADScrollerView */;
-			targetProxy = 2528465A1C8542B9002B5023 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		252846411C8542B9002B5023 /* Main.storyboard */ = {
@@ -455,54 +305,6 @@
 			};
 			name = Release;
 		};
-		252846661C8542B9002B5023 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = FZADScrollerViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ferryzhu.FZADScrollerViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FZADScrollerView.app/FZADScrollerView";
-			};
-			name = Debug;
-		};
-		252846671C8542B9002B5023 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = FZADScrollerViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ferryzhu.FZADScrollerViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FZADScrollerView.app/FZADScrollerView";
-			};
-			name = Release;
-		};
-		252846691C8542B9002B5023 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = FZADScrollerViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ferryzhu.FZADScrollerViewUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = FZADScrollerView;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		2528466A1C8542B9002B5023 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = FZADScrollerViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ferryzhu.FZADScrollerViewUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = FZADScrollerView;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,22 +324,7 @@
 				252846641C8542B9002B5023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		252846651C8542B9002B5023 /* Build configuration list for PBXNativeTarget "FZADScrollerViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				252846661C8542B9002B5023 /* Debug */,
-				252846671C8542B9002B5023 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		252846681C8542B9002B5023 /* Build configuration list for PBXNativeTarget "FZADScrollerViewUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				252846691C8542B9002B5023 /* Debug */,
-				2528466A1C8542B9002B5023 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
