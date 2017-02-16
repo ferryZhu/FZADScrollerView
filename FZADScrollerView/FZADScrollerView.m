@@ -100,6 +100,7 @@
         self.rightImageView.image = [_images objectAtIndex:1];
         // image >= 2时 开启轮播
         self.moveTimer = [NSTimer scheduledTimerWithTimeInterval:kMoveTimeInterval target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        // fire会立即执行  addTimer 会间隔一个时间执行
         [[NSRunLoop currentRunLoop] addTimer:self.moveTimer forMode:NSDefaultRunLoopMode];
     }
     self.pageControl.numberOfPages = _images.count;
@@ -115,7 +116,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.x == 0.0) {
-        self.currentImageIndex = (self.currentImageIndex - 1) % self.images.count;
+        self.currentImageIndex = (self.currentImageIndex - 1 + self.images.count) % self.images.count;
     } else if (scrollView.contentOffset.x == 2 * kFZADScrollerViewWidth) {
         self.currentImageIndex = (self.currentImageIndex + 1) % self.images.count;
     } else {
@@ -123,7 +124,7 @@
     }
     
     self.pageControl.currentPage = self.currentImageIndex;
-    self.leftImageView.image = [self.images objectAtIndex:(self.currentImageIndex - 1) % self.images.count];
+    self.leftImageView.image = [self.images objectAtIndex:(self.currentImageIndex - 1 + self.images.count) % self.images.count];
     self.centerImageView.image = [self.images objectAtIndex:self.currentImageIndex % self.images.count];
     self.rightImageView.image = [self.images objectAtIndex:(self.currentImageIndex + 1) % self.images.count];
     
